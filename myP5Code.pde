@@ -3,10 +3,24 @@ setup = function(){
     size(400, 400); 
     background(255,255,255,150);
 }
-
+var position = 20;
+var speed = 3;
 //draw Function - will run repeatedly
 draw = function() {
-    ellipse(mouseX, mouseY, 20, 20);
+
+    fill(66, 0.5);
+    position = position + speed;
+    //mouseX and mouseY
+    //mouseIspressed
+    ellipse(position, mouseY, 50, 50);
+    ellipse(mouseX, position, 50, 50);
+
+    if (position > 375) {
+    speed = -5;
+    }
+    if (position < 25) {
+    speed = 5;
+    }
 
   //***in the video they use if(mouseIsPressed)
   //***in github we use if(mousePressed)
